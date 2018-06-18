@@ -1,18 +1,10 @@
 FROM centos:7
+RUN cat /etc/redhat-release
 
 
 # Install nodejs
-RUN curl -sL https://deb.nodesource.com/setup_10.x | bash \
-    && apt-get update \
-    && apt-get -y install nodejs git vim
-
-
-#copy project folder in to the container
-RUN mkdir -p /archive-tests-js
-COPY . /archive-tests-js/
-WORKDIR /archive-tests-js
-
-# Install the all the mohules
-RUN npm i
-
-ENTRYPOINT ["/archive-tests-js/docker-entrypoint-pre.sh"]
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | gpg --import \
+    && curl --silent --location https://rpm.nodesource.com/setup_10.x | bash - \
+    && curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo > /etc/yum.repos.d/yarn.repo \
+    && yum update \
+    && yum -y install nodejs git vim yarn gcc-c++ make
