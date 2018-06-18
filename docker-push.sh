@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # authenticate to dockerhub
-docker login --username $DOCKER_USER --password $DOCKER_PASS
+echo "$DOCKER_PASS" |"docker login --username $DOCKER_USER --password-stdin
 
 # push the image
 docker push $DOCKER_USER/$DOCKER_REPO
