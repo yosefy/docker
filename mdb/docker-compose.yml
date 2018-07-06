@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:9
+    restart: always
+    environment:
+      POSTGRES_DB: db
+    ports:
+      - 5432:5432
+  mdb:
+    image: bneibaruch/mdb
+    restart: always
+    ports:
+      - 443:4433
+      - 80:8080

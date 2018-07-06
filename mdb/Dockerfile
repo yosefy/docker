@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 WORKDIR /
-#ADD https://github.com/Bnei-Baruch/mdb/releases/download/vtest11/mdb mdb
+ADD https://github.com/Bnei-Baruch/mdb/releases/download/vtest11/mdb mdb
 ADD start.sh start.sh
 ADD config.toml config.toml
 RUN chmod +x mdb
