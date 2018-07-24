@@ -1,8 +1,8 @@
 [mdb]
-url="postgres://postgres/db?sslmode=disable&user=postgres"
+url="postgres://postgres/mdb?sslmode=disable&user=postgres"
 
 [test]
-url-template="postgres://db/%s?sslmode=disable&user=postgres"
+url-template="postgres://mdb/%s?sslmode=disable&user=postgres"
 debug-sql=false
 
 [events]
