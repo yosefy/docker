@@ -17,3 +17,7 @@ docker-compose up
 5. import database:
 
 docker exec mdb_mdb_1 bash -c "wget -O - https://kabbalahmedia.info/mdb_dump_latest.sql.gz | gunzip | psql -hpostgres -Upostgres mdb"
+
+6. open browser and check 
+
+http://127.0.0.1:8080/health_check
