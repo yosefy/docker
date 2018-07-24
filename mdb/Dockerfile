@@ -1,5 +1,5 @@
 FROM ubuntu:latest
-RUN apt-get update && apt-get install -y wget postgresql-client
+RUN apt-get update && apt-get install -y wget postgresql-client vim
 WORKDIR /
 ADD https://github.com/Bnei-Baruch/mdb/releases/download/v1.1.4/mdb mdb
 ADD start.sh start.sh
