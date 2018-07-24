@@ -1,4 +1,3 @@
-
 1. install docker on your machine
 
   https://docs.docker.com/docker-for-windows/install/
@@ -15,6 +14,6 @@ git clone https://github.com/yosefy/docker.git && cd docker/mdb
 
 docker-compose up
 
-5.import database:
+5. import database:
 
 docker exec mdb_mdb_1 bash -c "wget -O - https://kabbalahmedia.info/mdb_dump_latest.sql.gz | gunzip | psql -hpostgres -Upostgres mdb"
